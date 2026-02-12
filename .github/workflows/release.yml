@@ -22,7 +22,14 @@ jobs:
             path: work/
       - name: Upload release
         run: |
-            sudo apt -y update
-            sudo apt -y install tree
-            tree
-            gh release upload "${{ github.event.release.tag_name }}" mkosi.output/*
+            cd work/deploy-*/
+            img=(rpi-fog-v*.img)
+            sbom=${img/.img/.sbom}
+            info=${img/.img/.info}
+            mv filesystem-*.sbom "$sbom"
+            mv manifest "$info"
+            xz "$img"
+            xz "$sbom"
+            sha256sum "$img.xz" > "$img.xz.sha256"
+            sha1sum "$img.xz" > "$img.xz.sha1"
+            gh release upload "${{ github.event.release.tag_name }}" *.xz* "$info"
