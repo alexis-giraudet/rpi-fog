@@ -1,3 +1,8 @@
+fog:
+  project_version: 1.5.10.1754
+  os_version: 20251221
+  client_version: 0.13.0
+
 device:
   layer: rpi-all
   hostname: raspberry
@@ -7,12 +12,7 @@ image:
   layer: image-rpios
   boot_part_size: 128M
   root_part_size: 4G
-  name: rpi-fog
-
-fog:
-  project_version: 1.5.10.1754
-  os_version: 20251221
-  client_version: 0.13.0
+  name: rpi-fog-v${IGconf_fog_project_version}
 
 layer:
   user: rpi-user-credentials
