@@ -1,0 +1,20 @@
+device:
+  layer: rpi-all
+  hostname: raspberry
+  user1: fog
+
+image:
+  layer: image-rpios
+  boot_part_size: 128M
+  root_part_size: 4G
+  name: rpi-fog
+
+fog:
+  project_version: 1.5.10.1754
+  os_version: 20251221
+  client_version: 0.13.0
+
+layer:
+  user: rpi-user-credentials
+  base: trixie-minbase
+  app: fog

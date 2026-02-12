@@ -1,1 +1,1 @@
-# fog-raspberry-osi
+# Raspberry FOG image
