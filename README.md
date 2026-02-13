@@ -1,10 +1,12 @@
 # Raspberry Pi image including FOG server
 
-The image contains all FOG dependencies and assets, and can be used fully offline.
+The image is generated using [rpi-image-gen](https://github.com/raspberrypi/rpi-image-gen), contains all FOG dependencies and assets, and can be used fully offline.
 
 FOG is automatically installed during the first boot.
 
 Default Linux and FOG user is `fog` and password is `password`.
+
+FOG server IP address is `192.168.0.1`.
 
 Compatible with Raspberry Pi 3, 4 and 5.
 
